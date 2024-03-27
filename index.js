@@ -2,7 +2,7 @@ const admin = require('./config/firebase-config')
 const fs = admin.firestore()
 const db = admin.database()
 
-const port = 8000
+const port = 3000
 const http = require('http')
 const WebSocket = require('ws')
 
