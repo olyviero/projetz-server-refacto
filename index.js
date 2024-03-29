@@ -2,7 +2,7 @@ const admin = require('./config/firebase-config')
 const fs = admin.firestore()
 const db = admin.database()
 
-const port = 3000
+const port = 8000
 const http = require('http')
 const WebSocket = require('ws')
 
@@ -32,6 +32,7 @@ const handleMessage = async (message) => {
             const newLobbyKey = await lobbies.createLobby(content.lobbyName, uid)
             await lobbies.addPlayerToLobby(newLobbyKey, uid, 'admin')
             broadcastToOne(uid, { type: 'joinLobby', content: { lobbyKey: newLobbyKey } })
+            broadcastToOne(uid, { type: 'setAdmin', content: { lobbyKey: newLobbyKey } })
 
             lobbiesUpdated = await lobbies.getLobbies()
             broadcast({ type: 'updateLobbies', content: { lobbies: lobbiesUpdated } })
