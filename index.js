@@ -23,6 +23,10 @@ const handleMessage = async (message) => {
     let lobbyKey
 
     switch (type) {
+        case 'navigateAll':
+            broadcast({ type: 'navigateAll', content: { page: content.page } })
+            break
+
         case 'getLobbies':
             lobbiesUpdated = await lobbies.getLobbies()
             broadcastToOne(uid, { type: 'updateLobbies', content: { lobbies: lobbiesUpdated } })
