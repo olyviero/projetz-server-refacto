@@ -6,3 +6,4 @@ yarn-error.log*
 
 .vscode
 serviceAccountKey.json
+serviceAccountKeyEncode.txt
