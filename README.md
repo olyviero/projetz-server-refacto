@@ -1,29 +1,29 @@
 # Installation
 
-To run the server, run:
-
 ```
-cd server
-npm install
-node index.js
+npm i
+node index.js / npm run start
 ```
 
-To run the client simultaneously, open a new terminal shell, and run:
+# Run Server on Glitch
+
+### config/firebase-config.js
+
+-   Add env variable for serviceAccount (encode in base64)
+-   package.json : use node v14 ?
+
+To kill process :
 
 ```
-cd client
-npm install
-npm run dev
+fuser -k 8000/tcp
 ```
 
-## React useWebSocket
+# Dependencies
+
+### React useWebSocket
 
 https://www.npmjs.com/package/react-use-websocket
 
-## TODO
+## TO DO
 
-Mission
-
-# in case in glitch:
-
-fuser -k 8000/tcp
+Add firebase analytics
